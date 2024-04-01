@@ -1,0 +1,48 @@
+{
+    "name": "js2ts",
+    "displayName": "js2ts",
+    "description": "可以将 js 对象和 json 对象直接转化为 ts 类型的 vscode 插件",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.87.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:js2ts.run"
+    ],
+    "main": "./src/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "js2ts.run",
+                "title": "js2ts:run"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "js2ts.run",
+                "key": "ctrl+alt+v",
+                "mac": "cmd+alt+v"
+            }
+        ]
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "pnpm run lint",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.6",
+        "@types/node": "18.x",
+        "@types/vscode": "^1.87.0",
+        "@vscode/test-cli": "^0.0.6",
+        "@vscode/test-electron": "^2.3.9",
+        "eslint": "^8.56.0",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "copy-paste": "^1.5.3"
+    }
+}
